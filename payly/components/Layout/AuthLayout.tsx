@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
-import BtnCTA from "../../lib/Buttons/BtnCTA";
-import TextInput from "../../lib/TextInput";
+import BtnCTA from "../lib/Buttons/BtnCTA";
+import TextInput from "../lib/TextInput";
 import styles from "./AuthLayout.module.css";
 
 type Props = {

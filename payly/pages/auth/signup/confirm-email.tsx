@@ -1,7 +1,7 @@
 import React from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import BtnCTATransparent from "../../../components/lib/Buttons/BtnCTATransparent";
-import AuthLayout from "../../../components/lib/Layout/AuthLayout";
+import AuthLayout from "../../../components/Layout/AuthLayout";
 import styles from "./confirm-email.module.css";
 
 type Props = {};

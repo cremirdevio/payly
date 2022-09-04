@@ -1,8 +1,9 @@
 import React from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
-import AuthLayout from "../../../components/lib/Layout/AuthLayout";
+import AuthLayout from "../../../components/Layout/AuthLayout";
 import TextInput from "../../../components/lib/TextInput";
 import styles from "./signup.module.css";
+import CheckPoint from "../../../components/lib/CheckPoint";
 
 type Props = {};
 
@@ -10,6 +11,7 @@ function signup({}: Props) {
   return (
     <AuthLayout>
       <>
+        <CheckPoint progressCount={1} />
         <div className={styles.personalInfo}>Personal Information</div>
         <div className={styles.headerInnerText}>
           Kindly fill in your details to get started
