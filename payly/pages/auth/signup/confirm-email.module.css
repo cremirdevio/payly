@@ -1,0 +1,26 @@
+.headerText {
+  font-size: 42px;
+  color: #00057B;
+  font-weight: 600;
+  margin-top: 30px;
+}
+.email {
+  height: 130px;
+  width: 100%;
+  font-size: 32px;
+  color: #494949;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.otp {
+  min-height: 170px;
+  width: 100%;
+}
+.resend {
+   color: #8981E1;
+   width: 100%;
+   text-align: center;
+   cursor: pointer;
+} 

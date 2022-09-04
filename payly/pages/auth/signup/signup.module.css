@@ -1,0 +1,14 @@
+
+.personalInfo {
+  color: #00057B;
+  font-size: 42px;
+  font-weight: 600;
+}
+.headerInnerText {
+  padding-bottom: 20px;
+}
+.alternateLogin {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 40px;
+}

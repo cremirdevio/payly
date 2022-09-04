@@ -1,0 +1,21 @@
+.headerText {
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: 'Inter', sans-serif;
+}
+.headerInnerText {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+.forgotPassword {
+  width: 100%;
+  text-align: end;
+  color: #8981E1;
+  max-width: 550px;
+}
+.alternateSignUp {
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
