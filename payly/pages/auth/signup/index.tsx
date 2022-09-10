@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import AuthLayout from "../../../components/Layout/AuthLayout";
 import TextInput from "../../../components/lib/TextInput";
@@ -8,6 +8,14 @@ import CheckPoint from "../../../components/lib/CheckPoint";
 type Props = {};
 
 function signup({}: Props) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [gender, setGender] = useState("");
+
   return (
     <AuthLayout>
       <>
@@ -17,21 +25,54 @@ function signup({}: Props) {
           Kindly fill in your details to get started
         </div>
         <TextInput
+          type={"firstName"}
+          state={firstName}
+          setState={setFirstName}
           label="First Name"
           placeholder="Enter your first name here"
         />
         <TextInput
+          type={"lastName"}
+          state={lastName}
+          setState={setLastName}
           label="Last Name"
           placeholder="Enter your last name/surname here"
         />
-        <TextInput label="Email" placeholder="Enter your email" />
-        <TextInput label="Password" placeholder="at least 8 characters" />
         <TextInput
+          type={"email"}
+          state={email}
+          setState={setEmail}
+          label="Email"
+          placeholder="Enter your email"
+        />
+        <TextInput
+          type={"password"}
+          state={password}
+          setState={setPassword}
+          label="Password"
+          placeholder="at least 8 characters"
+        />
+        <TextInput
+          type={"password"}
+          state={confirmPassword}
+          setState={setConfirmPassword}
           label="Confirm Password"
           placeholder="Re-type your password"
         />
-        <TextInput label="Gender" placeholder="Select your gender" />
-        <TextInput label="Phone Number" placeholder="Select your gender" />
+        <TextInput
+          state={gender}
+          setState={setGender}
+          type={"gender"}
+          label="Gender"
+          placeholder="Select your gender"
+        />
+        <TextInput
+          type={"phone Number"}
+          state={phoneNumber}
+          setState={setPhoneNumber}
+          label="Phone Number"
+          placeholder="Select your gender"
+        />
 
         <BtnCTA content="Next" />
         <div className={styles.alternateLogin}>
