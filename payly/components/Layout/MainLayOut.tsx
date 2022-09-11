@@ -18,6 +18,10 @@ interface MenuChildProps {
   menuName: string;
 }
 
+interface FooterType {
+  icon: any;
+}
+
 function MainLayOut({ children, name }: Props) {
   const MenuChildActive = ({ icon, menuName }: MenuChildProps) => {
     return (
@@ -39,6 +43,13 @@ function MainLayOut({ children, name }: Props) {
         </div>
       </div>
     );
+  };
+
+  const FooterActive = ({ icon }: FooterType) => {
+    return <div className={styles.footerBoxActive}>{icon}</div>;
+  };
+  const Footer = ({ icon }: FooterType) => {
+    return <div className={styles.footerBox}>{icon}</div>;
   };
 
   return (
@@ -83,6 +94,13 @@ function MainLayOut({ children, name }: Props) {
         <div className={styles.childrenContainer}>
           <div className={styles.childrenContainerInner}>{children}</div>
         </div>
+      </div>
+      <div className={styles.footer}>
+        <FooterActive icon={<MdSpaceDashboard size={22} />} />
+        <Footer icon={<ImLink size={22} />} />
+        <Footer icon={<FaHistory size={22} />} />
+        <Footer icon={<BiWallet size={22} />} />
+        <Footer icon={<VscAccount size={22} />} />
       </div>
     </div>
   );
