@@ -1,0 +1,131 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  font-family: inter;
+}
+.sideBar {
+  width: 25%;
+  max-width: 280px;
+  height: 100vh;
+  background-color: #8981E1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.logo {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.logoImage {
+  width: 100px;
+  height: 30px;
+}
+.menuChildActive {
+ height: 80%;
+ padding: 0px 20px 0px 20px;
+ background-color: white;
+ border-radius: 10px;
+ display: flex;
+ align-items: center;
+ width: 100%;
+}
+.menuChild {
+  height: 80%;
+  padding: 0px 20px 0px 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+}
+.menuMain {
+  height: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.iconActive {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+.icon {
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  color: white;
+}
+.menuName {
+  color: white;
+}
+.mainBar {
+  width: 100%;
+  min-height: 100vh;
+}
+.profileHeader {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px #0000000A;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.notif {
+  width: 80px;
+  display: flex;
+  justify-content: center;
+}
+.profile {
+  width: 100px;
+  display: flex;
+}
+.profileInner {
+  height: 30px;
+  width: 30px;
+  background-color: #BDBDBD;
+  border-radius: 100%;
+}
+.pageIntro {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.childrenContainer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+}
+.childrenContainerInner  {
+  width: 94%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pageIntroInner {
+  width: 94%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.greeting {
+  font-size: 20px;
+  
+}
+.initiateCTA {
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #8981E1;
+  color: white;
+  border-radius: 5px;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}

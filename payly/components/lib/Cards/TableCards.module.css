@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+}
+.icon {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+}
+.iconInner {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #8981E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.name {
+  width: 25%;
+  display: flex;
+  align-items: center;
+}
+.description {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.date {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.status {
+  width: 15%;
+  display: flex;
+  align-items: center;
+}
+.sucessful {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: green;
+  background: #EDFFF5;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.pending {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: orange;
+  background: rgb(255, 227, 175);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.cancelled {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: #F44E19;
+  background: #FFF6EA;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
