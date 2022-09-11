@@ -52,10 +52,12 @@ function MainLayOut({ children, name }: Props) {
     return <div className={styles.footerBox}>{icon}</div>;
   };
 
+  const title = `Payly - ${name}`;
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Payly - {name}</title>
+        <title>{title}</title>
         <meta name="description" content="Get payed for your freelance work" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -64,11 +66,27 @@ function MainLayOut({ children, name }: Props) {
           <img className={styles.logoImage} src="/images/logo-white.png" />
         </div>
         <div className={styles.menu}>
-          <MenuChildActive
-            icon={<MdSpaceDashboard size={22} />}
-            menuName={"Dashboard"}
-          />
-          <MenuChild icon={<ImLink size={22} />} menuName={"Payment links"} />
+          {name === "Dashboard" ? (
+            <MenuChildActive
+              icon={<MdSpaceDashboard size={22} />}
+              menuName={"Dashboard"}
+            />
+          ) : (
+            <MenuChild
+              icon={<MdSpaceDashboard size={22} />}
+              menuName={"Dashboard"}
+            />
+          )}
+
+          {name === "Payment" ? (
+            <MenuChildActive
+              icon={<ImLink size={22} />}
+              menuName={"Payment links"}
+            />
+          ) : (
+            <MenuChild icon={<ImLink size={22} />} menuName={"Payment links"} />
+          )}
+
           <MenuChild icon={<FaHistory size={22} />} menuName={"History"} />
           <MenuChild icon={<BiWallet size={22} />} menuName={"Wallet"} />
           <MenuChild icon={<VscAccount size={22} />} menuName={"Account"} />
@@ -83,21 +101,32 @@ function MainLayOut({ children, name }: Props) {
             <div className={styles.profileInner}></div>
           </div>
         </div>
-        <div className={styles.pageIntro}>
-          <div className={styles.pageIntroInner}>
-            <div className={styles.greeting}>Hi Sewa, Welcome!</div>
-            <div className={styles.initiateCTA}>
-              <div className={styles.initiate}>Initiate payment</div>
+        {name === "Dashboard" && (
+          <div className={styles.pageIntro}>
+            <div className={styles.pageIntroInner}>
+              <div className={styles.greeting}>Hi Sewa, Welcome!</div>
+              <div className={styles.initiateCTA}>
+                <div className={styles.initiate}>Initiate payment</div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
         <div className={styles.childrenContainer}>
           <div className={styles.childrenContainerInner}>{children}</div>
         </div>
       </div>
       <div className={styles.footer}>
-        <FooterActive icon={<MdSpaceDashboard size={22} />} />
-        <Footer icon={<ImLink size={22} />} />
+        {name === "Dashboard" ? (
+          <FooterActive icon={<MdSpaceDashboard size={22} />} />
+        ) : (
+          <Footer icon={<MdSpaceDashboard size={22} />} />
+        )}
+        {name === "Payment" ? (
+          <FooterActive icon={<ImLink size={22} />} />
+        ) : (
+          <Footer icon={<ImLink size={22} />} />
+        )}
+
         <Footer icon={<FaHistory size={22} />} />
         <Footer icon={<BiWallet size={22} />} />
         <Footer icon={<VscAccount size={22} />} />
