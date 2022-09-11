@@ -52,9 +52,9 @@ export default function BasicModal({ open, setOpen }: props) {
               </div>
             </div>
             <div className={styles.email}>
-              <div className={styles.eamilTitle}>Email</div>
-              <div className={styles.eamilInput}>
-                <div className={styles.inputContainer}>
+              <div className={styles.emailTitle}>Email</div>
+              <div className={styles.emailInput}>
+                <div className={styles.descContainer}>
                   <input className={styles.input} />
                 </div>
               </div>
