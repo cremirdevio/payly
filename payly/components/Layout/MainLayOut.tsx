@@ -7,6 +7,7 @@ import { FaHistory } from "react-icons/fa";
 import { BiWallet } from "react-icons/bi";
 import { VscAccount } from "react-icons/vsc";
 import { IoMdNotifications } from "react-icons/io";
+import Router from "next/router";
 
 type Props = {
   name: string;
@@ -16,13 +17,19 @@ type Props = {
 interface MenuChildProps {
   icon: any;
   menuName: string;
+  url: string;
 }
 
 interface FooterType {
   icon: any;
+  url: string;
 }
 
 function MainLayOut({ children, name }: Props) {
+  const nav = (url: string) => {
+    Router.push(url);
+  };
+
   const MenuChildActive = ({ icon, menuName }: MenuChildProps) => {
     return (
       <div className={styles.menuMain}>
@@ -34,9 +41,9 @@ function MainLayOut({ children, name }: Props) {
     );
   };
 
-  const MenuChild = ({ icon, menuName }: MenuChildProps) => {
+  const MenuChild = ({ icon, menuName, url }: MenuChildProps) => {
     return (
-      <div className={styles.menuMain}>
+      <div onClick={() => nav(url)} className={styles.menuMain}>
         <div className={styles.menuChild}>
           <div className={styles.icon}>{icon}</div>
           <div className={styles.menuName}>{menuName}</div>
@@ -48,8 +55,12 @@ function MainLayOut({ children, name }: Props) {
   const FooterActive = ({ icon }: FooterType) => {
     return <div className={styles.footerBoxActive}>{icon}</div>;
   };
-  const Footer = ({ icon }: FooterType) => {
-    return <div className={styles.footerBox}>{icon}</div>;
+  const Footer = ({ icon, url }: FooterType) => {
+    return (
+      <div onClick={() => nav(url)} className={styles.footerBox}>
+        {icon}
+      </div>
+    );
   };
 
   const title = `Payly - ${name}`;
@@ -68,11 +79,13 @@ function MainLayOut({ children, name }: Props) {
         <div className={styles.menu}>
           {name === "Dashboard" ? (
             <MenuChildActive
+              url={"/"}
               icon={<MdSpaceDashboard size={22} />}
               menuName={"Dashboard"}
             />
           ) : (
             <MenuChild
+              url={"/"}
               icon={<MdSpaceDashboard size={22} />}
               menuName={"Dashboard"}
             />
@@ -80,16 +93,32 @@ function MainLayOut({ children, name }: Props) {
 
           {name === "Payment" ? (
             <MenuChildActive
+              url={"payment"}
               icon={<ImLink size={22} />}
               menuName={"Payment links"}
             />
           ) : (
-            <MenuChild icon={<ImLink size={22} />} menuName={"Payment links"} />
+            <MenuChild
+              url={"payment"}
+              icon={<ImLink size={22} />}
+              menuName={"Payment links"}
+            />
           )}
-
-          <MenuChild icon={<FaHistory size={22} />} menuName={"History"} />
-          <MenuChild icon={<BiWallet size={22} />} menuName={"Wallet"} />
-          <MenuChild icon={<VscAccount size={22} />} menuName={"Account"} />
+          <MenuChild
+            url={"/"}
+            icon={<FaHistory size={22} />}
+            menuName={"History"}
+          />
+          <MenuChild
+            url={"/"}
+            icon={<BiWallet size={22} />}
+            menuName={"Wallet"}
+          />
+          <MenuChild
+            url={"/"}
+            icon={<VscAccount size={22} />}
+            menuName={"Account"}
+          />
         </div>
       </div>
       <div className={styles.mainBar}>
@@ -117,19 +146,19 @@ function MainLayOut({ children, name }: Props) {
       </div>
       <div className={styles.footer}>
         {name === "Dashboard" ? (
-          <FooterActive icon={<MdSpaceDashboard size={22} />} />
+          <FooterActive url={"/"} icon={<MdSpaceDashboard size={22} />} />
         ) : (
-          <Footer icon={<MdSpaceDashboard size={22} />} />
+          <Footer url={"/"} icon={<MdSpaceDashboard size={22} />} />
         )}
         {name === "Payment" ? (
-          <FooterActive icon={<ImLink size={22} />} />
+          <FooterActive url={"/payemnt"} icon={<ImLink size={22} />} />
         ) : (
-          <Footer icon={<ImLink size={22} />} />
+          <Footer url={"/payment"} icon={<ImLink size={22} />} />
         )}
 
-        <Footer icon={<FaHistory size={22} />} />
-        <Footer icon={<BiWallet size={22} />} />
-        <Footer icon={<VscAccount size={22} />} />
+        <Footer url={"/"} icon={<FaHistory size={22} />} />
+        <Footer url={"/"} icon={<BiWallet size={22} />} />
+        <Footer url={"/"} icon={<VscAccount size={22} />} />
       </div>
     </div>
   );
