@@ -6,7 +6,7 @@ import TextInput from "../../../components/lib/TextInput";
 import styles from "./bank.module.css";
 import CheckPoint from "../../../components/lib/CheckPoint";
 
-function bank() {
+function Bank() {
   const [NIN, setNIN] = useState("");
   const [accountName, setAccountName] = useState("");
   const [BVN, setBVN] = useState("");
@@ -47,7 +47,12 @@ function bank() {
           label="BVN"
           placeholder="Enter your 11 digit BVN Number"
         />
-        <BtnCTA content="Next" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Next"
+        />
         <BtnCTATransparent content="Back" />
         <div className={styles.spaceSection}></div>
       </>
@@ -55,4 +60,4 @@ function bank() {
   );
 }
 
-export default bank;
+export default Bank;

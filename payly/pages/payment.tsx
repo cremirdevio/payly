@@ -6,7 +6,7 @@ import styles from "./Payment.module.css";
 
 type Props = {};
 
-function payment({}: Props) {
+function Payment({}: Props) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -54,4 +54,4 @@ function payment({}: Props) {
   );
 }
 
-export default payment;
+export default Payment;

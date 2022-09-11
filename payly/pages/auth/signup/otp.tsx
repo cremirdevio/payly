@@ -24,7 +24,12 @@ function OTP({}: Props) {
             numInputs={6}
           />
         </div>
-        <BtnCTA content="Next" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Next"
+        />
         <div className={styles.resend}>Resend OTP in 10 secs</div>
       </>
     </AuthLayout>

@@ -15,7 +15,7 @@ function Signin({}: Props) {
       <>
         <div className={styles.headerText}>Log In</div>
         <div className={styles.headerInnerText}>
-          Welcome back to Payly. It's good to have you back
+          Welcome back to Payly. It`s good to have you back
         </div>
         <TextInput
           type={"email"}
@@ -32,7 +32,12 @@ function Signin({}: Props) {
           placeholder={"Enter your password here"}
         />
         <div className={styles.forgotPassword}>Forgot password?</div>
-        <BtnCTA content="Log In" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Log In"
+        />
         <div className={styles.alternateSignUp}>
           Already have an account? Sign up
         </div>
