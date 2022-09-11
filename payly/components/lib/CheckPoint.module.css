@@ -1,0 +1,49 @@
+.container {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.containerInner {
+  height: 30px;
+  width: 100%;
+  display: flex;
+}
+.circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #8981E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+.inActiveCircle {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: #CECECE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+}
+.rectangular {
+  width: 75%;
+  height: 3px;
+  background-color: #8981E1;
+}
+.inActiveRectangular {
+  width: 75%;
+  height: 3px;
+  background-color: #CECECE;
+}
+.progressContainer {
+  width: 33%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}

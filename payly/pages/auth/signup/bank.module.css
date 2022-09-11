@@ -1,0 +1,17 @@
+.headerText {
+  font-size: 36px;
+  font-weight: 600;
+  color: #00057B;
+}
+.IDHeader {
+  color: #494949;
+  font-weight: 600;
+}
+.headerTextTwo {
+  font-size: 20px;
+  color: #494949;
+  font-weight: 600;
+}
+.spaceSection {
+  padding-bottom: 80px;
+}

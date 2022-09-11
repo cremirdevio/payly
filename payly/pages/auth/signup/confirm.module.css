@@ -1,0 +1,34 @@
+.container {
+  background: #F5F5F5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+.containerInner {
+  background-color: white;
+  width: 90%;
+  height: 500px;
+  border-radius: 30px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.thumImg {
+  height: 55%;
+  width: 45%;
+}
+.heroText {
+  font-size: 28px;
+  color:#00057B;
+  font-weight: 600;
+}
+.innerText {
+  font-size: 14px;
+}
+.BtnCTA {
+  width: 90%;
+}

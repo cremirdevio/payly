@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+.halfOne {
+  width: 50%;
+  height: 100vh;
+  background: #D8D5F1FA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.halfTwo {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.halfTwoContainer {
+  width: 84%;
+  height: 100%;
+}
+.heroImg {
+  width: 60%;
+  max-width: 681px;
+  height: 100%;
+}
+.logoImg {
+  width: 120px;
+  height: 42px;
+}
+.logo {
+  margin-top: 50px;
+}
