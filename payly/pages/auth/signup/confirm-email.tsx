@@ -23,7 +23,12 @@ function ConfirmEmail({}: Props) {
           We are about to send you a 6-digit code to the <br /> email
         </div>
         <div className={styles.email}>{email}</div>
-        <BtnCTA content="Continue" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Continue"
+        />
         <BtnCTATransparent content="Go back" />
       </>
     </AuthLayout>

@@ -7,7 +7,7 @@ import CheckPoint from "../../../components/lib/CheckPoint";
 
 type Props = {};
 
-function signup({}: Props) {
+function Signup({}: Props) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -74,7 +74,12 @@ function signup({}: Props) {
           placeholder="Select your gender"
         />
 
-        <BtnCTA content="Next" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Next"
+        />
         <div className={styles.alternateLogin}>
           Already have an account? Log In
         </div>
@@ -83,4 +88,4 @@ function signup({}: Props) {
   );
 }
 
-export default signup;
+export default Signup;

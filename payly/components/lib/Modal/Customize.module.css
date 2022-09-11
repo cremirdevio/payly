@@ -30,13 +30,13 @@
   width: 80%;
   height: 80%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .amountInput {
   width: 80%;
   height: 80%;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .currency {
   height: 100%;

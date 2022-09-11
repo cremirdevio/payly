@@ -8,7 +8,7 @@ import CheckPoint from "../../../components/lib/CheckPoint";
 
 type Props = {};
 
-function residency({}: Props) {
+function Residency({}: Props) {
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [residence, setResidence] = useState("");
@@ -54,7 +54,12 @@ function residency({}: Props) {
           label="Country"
           placeholder="Country of residence"
         />
-        <BtnCTA content="Submit" />
+        <BtnCTA
+          loading={false}
+          disabled={false}
+          enabled={true}
+          content="Submit"
+        />
         <BtnCTATransparent content="Back" />
         <div className={styles.spaceSection}></div>
       </>
@@ -62,4 +67,4 @@ function residency({}: Props) {
   );
 }
 
-export default residency;
+export default Residency;

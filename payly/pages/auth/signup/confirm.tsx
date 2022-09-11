@@ -4,7 +4,7 @@ import styles from "./confirm.module.css";
 
 type Props = {};
 
-function confirm({}: Props) {
+function Confirm({}: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.containerInner}>
@@ -14,11 +14,16 @@ function confirm({}: Props) {
           Your account has been successfully created.
         </div>
         <div className={styles.BtnCTA}>
-          <BtnCTA content="Go Home" />
+          <BtnCTA
+            loading={false}
+            disabled={false}
+            enabled={true}
+            content="Go Home"
+          />
         </div>
       </div>
     </div>
   );
 }
 
-export default confirm;
+export default Confirm;
