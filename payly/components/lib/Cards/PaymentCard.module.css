@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  padding-bottom: 20px;
+  display: flex;
+}
+.name {
+  width: 20%;
+  display: flex;
+  align-items: center;
+}
+.description {
+  width: 30%;
+  display: flex;
+  align-items: center;
+}
+.status {
+  width: 25%;
+  display: flex;
+  max-width: 100px;
+  align-items: center;
+}
+.cta {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+ }
+ .copyCTA {
+   background-color: #8981E1;
+   padding-left: 20px;
+   padding-right: 20px;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: white;
+   border-radius: 10px;
+   cursor: pointer;
+ }
+.sucessful {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: green;
+  background: #EDFFF5;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.pending {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: orange;
+  background: rgb(255, 227, 175);
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+.cancelled {
+  padding: 5px 0px 5px 0px;
+  border-radius: 10px;
+  color: #F44E19;
+  background: #FFF6EA;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
