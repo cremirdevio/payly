@@ -147,10 +147,8 @@ function MainLayOut({ children, name }: Props) {
           <div className={styles.pageIntro}>
             <div className={styles.pageIntroInner}>
               <div className={styles.greeting}>Hi {firstName}, Welcome!</div>
-              <div className={styles.initiateCTA}>
-                <div onClick={() => handleOpen()} className={styles.initiate}>
-                  Initiate payment
-                </div>
+              <div onClick={() => handleOpen()} className={styles.initiateCTA}>
+                <div className={styles.initiate}>Initiate payment</div>
               </div>
             </div>
           </div>
