@@ -3,12 +3,15 @@ import styles from "./BtnCTATransparent.module.css";
 
 type Props = {
   content: string;
+  onClickEvent: () => void;
 };
 
-function BtnCTATransparent({ content }: Props) {
+function BtnCTATransparent({ content, onClickEvent }: Props) {
   return (
     <div className={styles.container}>
-      <div className={styles.containerInner}>{content}</div>
+      <div onClick={() => onClickEvent()} className={styles.containerInner}>
+        {content}
+      </div>
     </div>
   );
 }

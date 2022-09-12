@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { ReactElement } from "react";
+import React, { ReactElement, useState, useEffect } from "react";
 import styles from "./MainLayOut.module.css";
 import { MdSpaceDashboard } from "react-icons/md";
 import { ImLink } from "react-icons/im";
@@ -8,6 +8,7 @@ import { BiWallet } from "react-icons/bi";
 import { VscAccount } from "react-icons/vsc";
 import { IoMdNotifications } from "react-icons/io";
 import Router from "next/router";
+import BasicModal from "../lib/Modal/CustomizeModal";
 
 type Props = {
   name: string;
@@ -29,6 +30,11 @@ function MainLayOut({ children, name }: Props) {
   const nav = (url: string) => {
     Router.push(url);
   };
+
+  const [open, setOpen] = useState(false);
+  const [firstName, setFirstName] = useState("");
+
+  const handleOpen = () => setOpen(true);
 
   const MenuChildActive = ({ icon, menuName }: MenuChildProps) => {
     return (
@@ -62,6 +68,13 @@ function MainLayOut({ children, name }: Props) {
       </div>
     );
   };
+
+  useEffect(() => {
+    let firstName = localStorage.getItem("firstName");
+    if (firstName) {
+      setFirstName(firstName);
+    }
+  }, []);
 
   const title = `Payly - ${name}`;
 
@@ -133,9 +146,11 @@ function MainLayOut({ children, name }: Props) {
         {name === "Dashboard" && (
           <div className={styles.pageIntro}>
             <div className={styles.pageIntroInner}>
-              <div className={styles.greeting}>Hi Sewa, Welcome!</div>
+              <div className={styles.greeting}>Hi {firstName}, Welcome!</div>
               <div className={styles.initiateCTA}>
-                <div className={styles.initiate}>Initiate payment</div>
+                <div onClick={() => handleOpen()} className={styles.initiate}>
+                  Initiate payment
+                </div>
               </div>
             </div>
           </div>
@@ -160,6 +175,7 @@ function MainLayOut({ children, name }: Props) {
         <Footer url={"/"} icon={<BiWallet size={22} />} />
         <Footer url={"/"} icon={<VscAccount size={22} />} />
       </div>
+      <BasicModal open={open} setOpen={setOpen} />
     </div>
   );
 }

@@ -33,3 +33,11 @@
 .logo {
   margin-top: 50px;
 }
+@media only screen and (max-width: 992px) {
+  .halfOne {
+    display: none;
+  }
+  .halfTwo {
+    width: 100%;
+  }
+}

@@ -1,3 +1,4 @@
+import Router from "next/router";
 import React from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import styles from "./confirm.module.css";
@@ -5,6 +6,10 @@ import styles from "./confirm.module.css";
 type Props = {};
 
 function Confirm({}: Props) {
+  const nav = (url: string) => {
+    Router.push(url);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.containerInner}>
@@ -15,6 +20,7 @@ function Confirm({}: Props) {
         </div>
         <div className={styles.BtnCTA}>
           <BtnCTA
+            OnClickEvent={() => nav("/")}
             loading={false}
             disabled={false}
             enabled={true}

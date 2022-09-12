@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import BtnCTATransparent from "../../../components/lib/Buttons/BtnCTATransparent";
 import AuthLayout from "../../../components/Layout/AuthLayout";
 import TextInput from "../../../components/lib/TextInput";
 import styles from "./residency.module.css";
 import CheckPoint from "../../../components/lib/CheckPoint";
+import Router from "next/router";
 
 type Props = {};
 
@@ -14,6 +15,46 @@ function Residency({}: Props) {
   const [residence, setResidence] = useState("");
   const [origin, setOrigin] = useState("");
   const [country, setCountry] = useState("");
+
+  const [enabled, setEnabled] = useState(true);
+  const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const nav = (url: string) => {
+    Router.push(url);
+  };
+
+  const handleConfirm = () => {
+    localStorage.setItem("street", street);
+    localStorage.setItem("city", city);
+    localStorage.setItem("residence", residence);
+    localStorage.setItem("origin", origin);
+    localStorage.setItem("country", country);
+
+    nav("confirm");
+    setDisabled(false);
+    setLoading(true);
+    setEnabled(false);
+  };
+
+  useEffect(() => {
+    if (
+      street.length > 0 &&
+      city.length > 0 &&
+      residence.length > 0 &&
+      origin.length > 9 &&
+      country.length > 0
+    ) {
+      setDisabled(false);
+      setLoading(false);
+      setEnabled(true);
+    } else {
+      setDisabled(true);
+      setLoading(false);
+      setEnabled(false);
+    }
+  }, [street, city, residence, origin, country]);
+
   return (
     <AuthLayout>
       <>
@@ -55,12 +96,13 @@ function Residency({}: Props) {
           placeholder="Country of residence"
         />
         <BtnCTA
-          loading={false}
-          disabled={false}
-          enabled={true}
+          OnClickEvent={handleConfirm}
+          loading={loading}
+          disabled={disabled}
+          enabled={enabled}
           content="Submit"
         />
-        <BtnCTATransparent content="Back" />
+        <BtnCTATransparent onClickEvent={() => nav("bank")} content="Back" />
         <div className={styles.spaceSection}></div>
       </>
     </AuthLayout>
