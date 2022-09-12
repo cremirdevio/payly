@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React, { ReactElement } from "react";
 import BtnCTA from "../lib/Buttons/BtnCTA";
 import TextInput from "../lib/TextInput";
@@ -10,6 +11,11 @@ type Props = {
 function AuthLayout({ children }: Props) {
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Payly - Auth</title>
+        <meta name="description" content="Get payed for your freelance work" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.halfOne}>
         <img
           className={styles.heroImg}
