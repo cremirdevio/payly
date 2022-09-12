@@ -35,7 +35,7 @@ function Signup({}: Props) {
     setDisabled(false);
     setLoading(true);
     setEnabled(false);
-    nav("confirm-email");
+    nav("/auth/signup/confirm-email");
   };
 
   useEffect(() => {
