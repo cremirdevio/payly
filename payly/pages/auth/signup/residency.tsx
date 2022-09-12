@@ -31,7 +31,7 @@ function Residency({}: Props) {
     localStorage.setItem("origin", origin);
     localStorage.setItem("country", country);
 
-    nav("/");
+    nav("confirm");
     setDisabled(false);
     setLoading(true);
     setEnabled(false);
