@@ -114,6 +114,7 @@
   justify-content: center;
   border-radius: 10px;
   background: #E0E0E0;
+  cursor: pointer;
 }
 .createLink {
   width: 150px;
@@ -124,6 +125,7 @@
   color: white;
   border-radius: 10px;
   background: #8981E1;
+  cursor: pointer;
 }
 @media only screen and (max-width: 992px) {
   .amount {

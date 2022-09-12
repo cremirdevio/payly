@@ -1,13 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import AuthLayout from "../../../components/Layout/AuthLayout";
 import styles from "./confirm-email.module.css";
 import OtpInput from "react-otp-input";
+import Router from "next/router";
 
 type Props = {};
 
 function OTP({}: Props) {
   const [otp, setOTP] = useState("");
+
+  const [enabled, setEnabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const nav = (url: string) => {
+    Router.push(url);
+  };
+
+  const handleOTP = () => {
+    setDisabled(false);
+    setLoading(true);
+    setEnabled(false);
+    nav("bank");
+  };
+
+  useEffect(() => {
+    if (otp === "012345") {
+      setDisabled(false);
+      setLoading(false);
+      setEnabled(true);
+    } else {
+      setDisabled(true);
+      setLoading(false);
+      setEnabled(false);
+    }
+  }, [otp]);
+
   return (
     <AuthLayout>
       <>
@@ -25,9 +54,10 @@ function OTP({}: Props) {
           />
         </div>
         <BtnCTA
-          loading={false}
-          disabled={false}
-          enabled={true}
+          OnClickEvent={handleOTP}
+          loading={loading}
+          disabled={disabled}
+          enabled={enabled}
           content="Next"
         />
         <div className={styles.resend}>Resend OTP in 10 secs</div>

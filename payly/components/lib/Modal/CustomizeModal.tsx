@@ -60,7 +60,9 @@ export default function BasicModal({ open, setOpen }: props) {
               </div>
             </div>
             <div className={styles.CTA}>
-              <div className={styles.cancel}>Cancel</div>
+              <div onClick={() => setOpen(false)} className={styles.cancel}>
+                Cancel
+              </div>
               <div className={styles.createLink}>Create link</div>
             </div>
           </div>

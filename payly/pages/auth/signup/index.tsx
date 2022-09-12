@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BtnCTA from "../../../components/lib/Buttons/BtnCTA";
 import AuthLayout from "../../../components/Layout/AuthLayout";
 import TextInput from "../../../components/lib/TextInput";
 import styles from "./signup.module.css";
 import CheckPoint from "../../../components/lib/CheckPoint";
+import Router from "next/router";
 
 type Props = {};
 
@@ -15,6 +16,57 @@ function Signup({}: Props) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [gender, setGender] = useState("");
+
+  const [enabled, setEnabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
+  const [loading, setLoading] = useState(false);
+
+  const nav = (url: string) => {
+    Router.push(url);
+  };
+
+  const handleSignIn = () => {
+    localStorage.setItem("firstName", firstName);
+    localStorage.setItem("lastName", lastName);
+    localStorage.setItem("email", email);
+    localStorage.setItem("password", password);
+    localStorage.setItem("phoneNumber", phoneNumber);
+    localStorage.setItem("gender", gender);
+    setDisabled(false);
+    setLoading(true);
+    setEnabled(false);
+    nav("confirm-email");
+  };
+
+  useEffect(() => {
+    if (
+      firstName.length > 0 &&
+      lastName.length > 0 &&
+      email.match(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      ) &&
+      password.length > 0 &&
+      password === confirmPassword &&
+      phoneNumber.length > 9 &&
+      gender.length > 0
+    ) {
+      setDisabled(false);
+      setLoading(false);
+      setEnabled(true);
+    } else {
+      setDisabled(true);
+      setLoading(false);
+      setEnabled(false);
+    }
+  }, [
+    firstName,
+    lastName,
+    email,
+    password,
+    confirmPassword,
+    phoneNumber,
+    gender,
+  ]);
 
   return (
     <AuthLayout>
@@ -71,16 +123,20 @@ function Signup({}: Props) {
           state={phoneNumber}
           setState={setPhoneNumber}
           label="Phone Number"
-          placeholder="Select your gender"
+          placeholder="Type your phone number"
         />
 
         <BtnCTA
-          loading={false}
-          disabled={false}
-          enabled={true}
+          OnClickEvent={handleSignIn}
+          loading={loading}
+          disabled={disabled}
+          enabled={enabled}
           content="Next"
         />
-        <div className={styles.alternateLogin}>
+        <div
+          onClick={() => nav("/auth/signin")}
+          className={styles.alternateLogin}
+        >
           Already have an account? Log In
         </div>
       </>
