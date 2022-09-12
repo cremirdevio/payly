@@ -127,6 +127,55 @@
   background: #8981E1;
   cursor: pointer;
 }
+.containerLink {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+.r1 {
+  font-size: 28px;
+  color: #828282;
+  font-weight: bold;
+}
+.r2 {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.r3 {
+  color: #828282;
+  font-size: 20px;
+}
+.r4 {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+.r5 {
+  display: flex;
+  align-items: center;
+}
+.r4Number {
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+.copyLink {
+  display: flex;
+  margin-top: 20px;
+}
+.copyText {
+  padding-right: 10px;
+}
+.copyIcon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.img {
+  height: 60px;
+}
 @media only screen and (max-width: 992px) {
   .amount {
     font-size: 12px;
