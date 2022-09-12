@@ -34,7 +34,7 @@ function Signin({}: Props) {
       setLoading(false);
       setEnabled(false);
     }
-  }, []);
+  }, [email, password]);
 
   return (
     <AuthLayout>
